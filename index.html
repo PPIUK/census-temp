@@ -3,28 +3,34 @@
   <head>
     <meta charset="UTF-8">
     <title>Name Collection Form</title>
+    <link rel="stylesheet" href="path/to/your/css/file.css">
   </head>
   <body>
     <h1>Enter Your Name</h1>
-    <form name="contact" method="POST" data-netlify="true">
-      <p>
-        <label>Your Name: <input type="text" name="name" /></label>
-      </p>
-      <p>
-        <label>Your Email: <input type="email" name="email" /></label>
-      </p>
-      <p>
-        <label>Your Role: <select name="role[]" multiple>
-          <option value="leader">Leader</option>
-          <option value="follower">Follower</option>
-        </select></label>
-      </p>
-      <p>
-        <label>Message: <textarea name="message"></textarea></label>
-      </p>
-      <p>
-        <button type="submit">Send</button>
-      </p>
+    <form action="/submit" method="post">
+      <fieldset>
+        <legend>Section 1</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+      </fieldset>
+      <fieldset>
+        <legend>Section 2</legend>
+        <div class="section">
+          <div class="section-header">Question 1</div>
+          <div class="section-description">This is a description for question 1.</div>
+          <label for="question1">Answer:</label>
+          <textarea id="question1" name="question1" rows="4" required></textarea>
+        </div>
+        <div class="section">
+          <div class="section-header">Question 2</div>
+          <div class="section-description">This is a description for question 2.</div>
+          <label for="question2">Answer:</label>
+          <textarea id="question2" name="question2" rows="4" required></textarea>
+        </div>
+      </fieldset>
+      <input type="submit" value="Submit">
     </form>
   </body>
 </html>
